@@ -1,3 +1,7 @@
+## 1.0.0 - Bug fixes
+* Updated deprecated atom methods
+* Cat now is full length when there is no scrollbar.
+
 ## 0.13.0 - Bug fixes
 * Updated deprecated atom methods
 * Background of cat is now transparent
