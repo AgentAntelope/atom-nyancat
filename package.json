@@ -1,7 +1,7 @@
 {
-  "name": "scroll-nyancat",
-  "main": "./lib/atom-nyancat",
-  "version": "1.0.0",
+  "name": "nyancat-scroll",
+  "main": "./lib/nyancat-scroll",
+  "version": "0.0.0",
   "description": "Adds a nyancat scroll progress indicator to the Atom status bar",
   "keywords": [
     "nyancat",
@@ -10,7 +10,7 @@
     "atom",
     "status bar"
   ],
-  "repository": "https://github.com/AgentAntelope/atom-nyancat",
+  "repository": "https://github.com/AgentAntelope/nyancat-scroll",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
