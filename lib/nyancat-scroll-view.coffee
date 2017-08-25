@@ -1,9 +1,9 @@
 module.exports =
-class AtomNyancatView
+class NyancatScrollView
   constructor: (serializedState) ->
     # Create root element
     @element = document.createElement('div')
-    @element.classList.add('inline-block', 'atom-nyancat')
+    @element.classList.add('inline-block', 'nyancat-scroll')
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -42,14 +42,14 @@ class AtomNyancatView
     @element.style.width = maxWidth + "px"
 
     catTrail = document.createElement('span')
-    catTrail.classList.add('atom-nyancat-trail')
+    catTrail.classList.add('nyancat-scroll-trail')
     catTrail.style.width = Math.min(trailSize, maxWidth - catHeadSize) + "px"
 
     catHead = document.createElement('span')
-    catHead.classList.add('atom-nyancat-head')
+    catHead.classList.add('nyancat-scroll-head')
 
     catArse = document.createElement('span')
-    catArse.classList.add('atom-nyancat-arse')
+    catArse.classList.add('nyancat-scroll-arse')
 
     catTrail.appendChild(catArse)
     @element.appendChild(catTrail)

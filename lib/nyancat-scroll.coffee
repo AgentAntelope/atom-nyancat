@@ -1,15 +1,13 @@
-AtomNyancatView = require './atom-nyancat-view'
+NyancatScrollView = require './nyancat-scroll-view'
 {CompositeDisposable} = require 'atom'
 
-module.exports = AtomNyancat =
-  atomNyancatView: null
+module.exports = NyancatScroll =
+  NyancatScrollView: null
   modalPanel: null
   subscriptions: null
 
   activate: (state) ->
-    console.log "nyancat enabled"
-
-    @view = new AtomNyancatView()
+    @view = new NyancatScrollView()
     @subs = new CompositeDisposable
 
     @subs.add atom.workspace.observeActivePaneItem =>
