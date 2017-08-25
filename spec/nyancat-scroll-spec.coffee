@@ -1,39 +1,39 @@
-AtomNyancat = require '../lib/atom-nyancat'
+AtomNyancat = require '../lib/nyancat-scroll'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "AtomNyancat", ->
+describe "NyancatScroll", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('atom-nyancat')
+    activationPromise = atom.packages.activatePackage('nyancat-scroll')
 
-  describe "when the atom-nyancat:toggle event is triggered", ->
+  describe "when the nyancat-scroll:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.atom-nyancat')).not.toExist()
+      expect(workspaceElement.querySelector('.nyancat-scroll')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'atom-nyancat:toggle'
+      atom.commands.dispatch workspaceElement, 'nyancat-scroll:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.atom-nyancat')).toExist()
+        expect(workspaceElement.querySelector('.nyancat-scroll')).toExist()
 
-        atomNyancatElement = workspaceElement.querySelector('.atom-nyancat')
+        atomNyancatElement = workspaceElement.querySelector('.nyancat-scroll')
         expect(atomNyancatElement).toExist()
 
         atomNyancatPanel = atom.workspace.panelForItem(atomNyancatElement)
         expect(atomNyancatPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'atom-nyancat:toggle'
+        atom.commands.dispatch workspaceElement, 'nyancat-scroll:toggle'
         expect(atomNyancatPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
@@ -45,18 +45,18 @@ describe "AtomNyancat", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.atom-nyancat')).not.toExist()
+      expect(workspaceElement.querySelector('.nyancat-scroll')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'atom-nyancat:toggle'
+      atom.commands.dispatch workspaceElement, 'nyancat-scroll:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        atomNyancatElement = workspaceElement.querySelector('.atom-nyancat')
+        atomNyancatElement = workspaceElement.querySelector('.nyancat-scroll')
         expect(atomNyancatElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'atom-nyancat:toggle'
+        atom.commands.dispatch workspaceElement, 'nyancat-scroll:toggle'
         expect(atomNyancatElement).not.toBeVisible()

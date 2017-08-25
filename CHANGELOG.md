@@ -1,6 +1,8 @@
 ## 1.0.0 - Bug fixes
 * Updated deprecated atom methods
 * Cat now is full length when there is no scrollbar.
+* Move to new repository
+* Rename everything
 
 ## 0.13.0 - Bug fixes
 * Updated deprecated atom methods
