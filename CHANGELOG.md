@@ -1,3 +1,6 @@
+## 1.0.2 - Bug fixes
+* Cat now is full length, no hidden nose
+
 ## 1.0.0 - Bug fixes
 * Updated deprecated atom methods
 * Cat now is full length when there is no scrollbar.
